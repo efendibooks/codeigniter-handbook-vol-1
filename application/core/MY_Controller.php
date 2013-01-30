@@ -39,10 +39,11 @@ class MY_Controller extends CI_Controller
 			$this->_run_after_filters($method, $parameters);
 		}
 		else
-    	{
-        	show_404();
+    		{
+        		show_404();
 		}
 
+		$view = strtolower(get_class($this)) . '/' . $method;
 		$view = (is_string($this->view) && !empty($this->view)) ? $this->view : $view;
 
 		if ($this->view !== FALSE)
