@@ -16,8 +16,8 @@ class MY_Controller extends CI_Controller
 		parent::__construct();
 
 		$this->load->helper('inflector');
-		
-		$model = strotolower(singular(get_class($this)));
+
+		$model = strtolower(singular(get_class($this)));
 
 		if (file_exists(APPPATH . 'models/' . $model . '_model.php'))
 		{
@@ -77,7 +77,7 @@ class MY_Controller extends CI_Controller
 	protected function _run_filters($what, $action, $parameters)
 	{
 		$what = $what . '_filters';
-		
+
 		foreach ($this->$what as $filter => $details)
 		{
 			if (is_string($details))
