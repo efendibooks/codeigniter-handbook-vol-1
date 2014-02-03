@@ -4,7 +4,7 @@ function partial($name, $data, $loop = FALSE)
 {
 	$output = "";
 	
-	if (strpos('/', $name) === FALSE)
+	if (strpos($name, '/') === FALSE)
 	{
 		$name = get_instance()->router->directory . get_instance()->router->class . '/_' . $name;
 	}
