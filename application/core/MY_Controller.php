@@ -34,9 +34,9 @@ class MY_Controller extends CI_Controller
 	{
 		if (method_exists($this, $method))
 		{
-			$this->_run_before_filters($method, $parameters);
-				call_user_func_array(array($this, $method), $parameters);
-			$this->_run_after_filters($method, $parameters);
+			$this->_run_filters('before', $method, $parameters);
+			call_user_func_array(array($this, $method), $parameters);
+			$this->_run_filters('after', $method, $parameters);
 		}
 		else
     		{
